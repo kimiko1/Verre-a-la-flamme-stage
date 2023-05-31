@@ -4,12 +4,24 @@ html, body{
 
 body{
     display: flex;
-    flex-direction: column  ;
+    flex-direction: column;
+    background-image: url("../img/index-background.png");
+    background-repeat:no-repeat;
+    background-position: center;
 }
 .content{
     flex-grow: 1;
 }
-.content p, h1{
+.content p{
     text-align: center;
+    color: black;
+}
+div{
+    text-align: center;
+}
+.verre{
+    color: orange;
+}
+.flamme{
     color: black;
 }

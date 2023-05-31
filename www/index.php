@@ -14,7 +14,12 @@
 
 <body>
     <div class="content">
-        <h1>Verre à la flamme</h1>
+        <div class="verre">
+            <h1>Verre à la </h1>
+        </div>
+        <div class="flamme">
+            <h1>flamme</h1>
+        </div>
         <p>Création de bijoux en perle de verre filé</p>
     </div>
 </body>
