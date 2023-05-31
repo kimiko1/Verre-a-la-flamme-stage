@@ -1,0 +1,14 @@
+footer{
+    background-color: black;
+}
+hr{
+    color: beige;
+}
+div{
+    padding-top: 10px;
+    display: inline-block;
+}
+a, i,p{
+    color: white;
+    text-decoration: none;
+}
