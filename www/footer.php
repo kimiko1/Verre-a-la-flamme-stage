@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="css/footer.css">
 <footer class="text-center">
     <section>
+        <img src="img/reverseLogo.png" alt="" class="logo">
         <div class="gmail">
             <a href="#">
                 <i class="fa-regular fa-envelope fa-xl"></i>
@@ -19,6 +20,9 @@
                 <p>Verre à la flamme</p>
             </a>
         </div>
+
+        <img src="img/logo.png" alt="" class="logo">
+
         <hr>
         <p class="mb-3 text-muted">B.Raoult &copy; 2022-
             <?php echo date("Y"); ?>

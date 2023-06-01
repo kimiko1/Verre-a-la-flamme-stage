@@ -20,7 +20,14 @@ div{
     text-align: center;
 }
 .title1{
-    color: orange;
+    color: #FD915A;
+}
+.batons{
+    position: absolute;
+    height: 32%;
+    width: 22%;
+    left: 38.5%;
+    top: -5%;
 }
 .title2{
     font-family: 'Pacifico', cursive;
@@ -36,8 +43,8 @@ div{
     gap: 5%;
 }
 img.bijou{
-    height: 100%;
-    width: 15%;
+    height: 95%;
+    width: 16%;
 }
 img.flyer{
     height: 100%;
