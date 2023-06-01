@@ -5,9 +5,7 @@ html, body{
 body{
     display: flex;
     flex-direction: column;
-    background-image: url("../img/index-background.png");
-    background-repeat:no-repeat;
-    background-position: center;
+    background: url("../img/index-background.png") center no-repeat;
 }
 .content{
     flex-grow: 1;
@@ -15,13 +13,33 @@ body{
 .content p{
     text-align: center;
     color: black;
+    padding-left: 7%;
+    margin: 0;
 }
 div{
     text-align: center;
 }
-.verre{
+.title1{
     color: orange;
 }
-.flamme{
+.title2{
+    font-family: 'Pacifico', cursive;
+    margin-top: 20px;
+    position: absolute;
+    top: -1px;
+    font-size: larger;
     color: black;
+}
+.presentation{
+    display: flex;
+    height: 70%;
+    gap: 5%;
+}
+img.bijou{
+    height: 100%;
+    width: 15%;
+}
+img.flyer{
+    height: 100%;
+    width: 60%; 
 }
