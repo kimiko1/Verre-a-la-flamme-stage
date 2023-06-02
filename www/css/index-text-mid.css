@@ -3,9 +3,9 @@ html, body{
 }
 
 body{
+    background: url("../img/index-background.png") center no-repeat;
     display: flex;
     flex-direction: column;
-    background: url("../img/index-background.png") center no-repeat;
 }
 .content{
     flex-grow: 1;
@@ -13,7 +13,7 @@ body{
 .content p{
     text-align: center;
     color: black;
-    padding-left: 7%;
+    align-self: center;
     margin: 0;
 }
 div{
@@ -28,27 +28,35 @@ div{
     position: absolute;
     height: 32%;
     width: 22%;
-    left: 38.5%;
+    left: 34%;
     top: -5%;
 }
 .title2{
     font-family: 'Pacifico', cursive;
     margin-top: 20px;
-    position: absolute;
-    top: -1px;
-    font-size: xx-large;
+    top: 10px;
     color: black;
 }
+
 .presentation{
-    gap: 5%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.img{
+    display: flex; 
+    gap: 25px;
 }
 img.bijou{
-    position: absolute;
-    left: 0;
-    height: 52%;
-    width: 16%;
+    width: 20%;
 }
 img.flyer{
-    height: 100%;
-    width: 60%;     
+    margin-left: 8%;
+    width: 50%;     
+}
+.right-text{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin-left: 30.19%;
 }
