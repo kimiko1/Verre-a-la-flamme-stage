@@ -10,6 +10,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/footer.css">
     <title>Accueil</title>
 </head>
 
@@ -34,9 +35,6 @@
     <script src="https://kit.fontawesome.com/84f57e19ad.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="/JavaScript/index.js"></script>
+    <?php require 'footer.php'?>
 </body>
-<footer>
-    <?php require 'footer.php' ?>
-</footer>
-
 </html>

@@ -24,12 +24,11 @@ div{
     margin-bottom: 1%;
     font-size: xx-large;
 }
+.logoBatons{
+    width: 5%;
+}
 .batons{
-    position: absolute;
-    height: 32%;
-    width: 22%;
-    left: 34%;
-    top: -5%;
+    width: 100%;
 }
 .title2{
     font-family: 'Pacifico', cursive;
