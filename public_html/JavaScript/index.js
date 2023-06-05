@@ -12,6 +12,7 @@ new Typewriter(Verre_a_la, {
 .start();
 
 new Typewriter(flamme,{
+    cursor: ''
 })
 .typeString(value_flamme)
 .start();
