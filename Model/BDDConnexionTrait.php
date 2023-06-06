@@ -9,27 +9,21 @@ trait BDDConnexionTrait
     /**
      * Fonction permettant de vérifier la connexion de l'utilisateur.
      */
-    public function getUser(){
-        // // Construction de la requête SQL
-        // $requete = "SELECT * FROM users";
+    public function getUser($mail, $motDePasse)
+    {
+        // Construction de la requête SQL
+        $req = $this->bdd->prepare("select * from Users where mail =:email");
+        // Envoi de la requête SQL
+        $req->bindParam(':email', $mail);
+        $req->execute();
+        $res = $req->fetch(PDO::FETCH_ASSOC);
 
-        // // Envoi de la requête SQL
-        // $resultats = $this->bdd->query($requete);
+        // On vérifie si le mot de passe est correct
+        if (password_verify($motDePasse, $res['mdp'])) {
+            // On retourne les informations de l'utilisateur
+            return $res;
+        }
 
-        // // Création d'un tableau vide
-        // $devoirs = array();
-
-        // // La requête a renvoyé des éléments ?
-        // if ($resultats) {
-        //     // Récupération des lignes de la table
-        //     while ($res = $resultats->fetch(PDO::FETCH_ASSOC)) {
-        //         // Chaque enregistrement vient enrichir le tableau.
-        //         $devoirs[] = $res;
-        //     }
-        // }
-
-        // return $devoirs;
-        // A modifier pour récupérer la saisie dans le formulaire de connexion afin de pour connecter l'utilisateur.
     }
 }
 ?>

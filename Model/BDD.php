@@ -13,6 +13,7 @@ use PDO;
 
 // Inclusion du traits permettant de scinder la classe BDD pour faciliter la maintenance 
 require dirname(__FILE__)."/BDDConnexionTrait.php";
+require dirname(__FILE__)."/BDDHorairesTrait.php";
 
 /**
  * Cette classe sert d'interface d'encapsulation pour les accès à la base
@@ -21,9 +22,15 @@ require dirname(__FILE__)."/BDDConnexionTrait.php";
 class BDD
 {
     /**
-     * Trait centralisant le code lié aux devoirs
+     * Trait centralisant le code lié aux connexions
      */
     use BDDConnexionTrait;
+
+    /**
+     * Trait centralisant le code lié aux horaires
+     */
+    use BDDHoraireTrait;
+
     /**
      * Singleton de la base de données.
      */
@@ -32,7 +39,7 @@ class BDD
     /**
      * Variable de classe indiquant le chemin d'accès vers le fichier de la base de données.
      */
-    private static string $cheminDeLaBDD = '/data/database.db';
+    private static string $cheminDeLaBDD = '../data/database.db';
 
     /**
      * Base de données SQLite3.

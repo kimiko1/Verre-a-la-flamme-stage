@@ -1,3 +1,20 @@
+<?php
+ob_start();
+// Contrôle automatiquement si l'utilisateur est bien connecté dans l'admin.
+require ('controle-identification.php');
+
+// Inclusion des models
+require('../model/BDD.php');
+
+// Inclusion des espaces de nommage utilisés dans notre code
+use Model\BDD;
+
+// On récupère les horaires de la base de données.
+$bdd = BDD::instance();
+$horaire = $bdd->getHoraires();
+
+var_dump($_COOKIE)
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -44,30 +61,32 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php foreach($horaire as $hor) :?>
                                 <tr>
                                     <td>Lundi : </td>
-                                    <td>Atelier d'art créatifs (Réservation)</td>
+                                    <td><?= $hor['Lundi'];?></td>
                                 </tr>
                                 <tr>
                                     <td>Mardi : </td>
-                                    <td>10h30 - 12h30 _ 15h30 - 18h30</td>
+                                    <td><?= $hor['Mardi'];?></td>
                                 </tr>
                                 <tr>
                                     <td>Mercredi : </td>
-                                    <td>10h30 - 12h30</td>
+                                    <td><?= $hor['Mercredi'];?></td>
                                 </tr>
                                 <tr>
                                     <td>Jeudi : </td>
-                                    <td>Atelier d'art créatifs (Réservation)</td>
+                                    <td><?= $hor['Jeudi'];?></td>
                                 </tr>
                                 <tr>
                                     <td>Vendredi : </td>
-                                    <td>10h30 - 12h30 _ 15h30 - 18h30</td>
+                                    <td><?= $hor['Vendredi'];?></td>
                                 </tr>
                                 <tr>
                                     <td>Samedi : </td>
-                                    <td>10h30 - 12h30</td>
+                                    <td><?= $hor['Samedi'];?></td>
                                 </tr>
+                                <?php endforeach;?>
                             </tbody>
                         </table>
                         <hr>
