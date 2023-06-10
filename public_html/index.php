@@ -1,7 +1,5 @@
 <?php
 ob_start();
-// Contrôle automatiquement si l'utilisateur est bien connecté dans l'admin.
-require ('controle-identification.php');
 
 // Inclusion des models
 require('../model/BDD.php');
@@ -10,10 +8,8 @@ require('../model/BDD.php');
 use Model\BDD;
 
 // On récupère les horaires de la base de données.
-$bdd = BDD::instance();
+$bdd     = BDD::instance();
 $horaire = $bdd->getHoraires();
-
-var_dump($_COOKIE)
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -28,15 +24,16 @@ var_dump($_COOKIE)
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
     <title>Accueil</title>
 </head>
 
 <body>
-    <div class="content">
+    <div class="Accueil" id="Accueil">
         <div class="title">
-            
-                <img src="img/img-index/batons2.png" alt="" class="batons">
-        
+
+            <img src="img/img-index/batons2.png" alt="" class="batons">
+
             <div class="title-h1">
                 <h1 class="verre_a_la">Verre à la</h1>
                 <h1 class="flamme">flamme</h1>
@@ -57,36 +54,49 @@ var_dump($_COOKIE)
                         <table class="table">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th colspan="2" style="text-align: center;">Les horaires jusqu'à fin Juin 2023 :</th>
+                                    <th colspan="2" style="text-align: center;">Les horaires jusqu'à fin Juin 2023 :
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach($horaire as $hor) :?>
-                                <tr>
-                                    <td>Lundi : </td>
-                                    <td><?= $hor['Lundi'];?></td>
-                                </tr>
-                                <tr>
-                                    <td>Mardi : </td>
-                                    <td><?= $hor['Mardi'];?></td>
-                                </tr>
-                                <tr>
-                                    <td>Mercredi : </td>
-                                    <td><?= $hor['Mercredi'];?></td>
-                                </tr>
-                                <tr>
-                                    <td>Jeudi : </td>
-                                    <td><?= $hor['Jeudi'];?></td>
-                                </tr>
-                                <tr>
-                                    <td>Vendredi : </td>
-                                    <td><?= $hor['Vendredi'];?></td>
-                                </tr>
-                                <tr>
-                                    <td>Samedi : </td>
-                                    <td><?= $hor['Samedi'];?></td>
-                                </tr>
-                                <?php endforeach;?>
+                                <?php foreach ($horaire as $hor): ?>
+                                    <tr>
+                                        <td>Lundi : </td>
+                                        <td>
+                                            <?= $hor['Lundi']; ?>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mardi : </td>
+                                        <td>
+                                            <?= $hor['Mardi']; ?>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mercredi : </td>
+                                        <td>
+                                            <?= $hor['Mercredi']; ?>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jeudi : </td>
+                                        <td>
+                                            <?= $hor['Jeudi']; ?>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vendredi : </td>
+                                        <td>
+                                            <?= $hor['Vendredi']; ?>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Samedi : </td>
+                                        <td>
+                                            <?= $hor['Samedi']; ?>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                         <hr>
@@ -97,9 +107,45 @@ var_dump($_COOKIE)
             </div>
         </div>
     </div>
+    <div class="presentation">
+        <h1 class="title">Présentation</h1>
+        <div class="description">
+            test
+        </div>
+        <div class="swipe">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_011.JPG" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_014.JPG" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_016.JPG" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_019.JPG" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_021.JPG" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_027.JPG" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_031.JPG" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_036.JPG" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_037.JPG" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_038.JPG" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_040.JPG" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_047.JPG" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_049.JPG" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_052.JPG" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_056.JPG" alt=""></div>
+                </div>
+                <div class="swiper-pagination"></div>
+    
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+        
+    </div>  
+    <a href="#Accueil">Revenir à l'Accueil</a>
     <script src="https://kit.fontawesome.com/84f57e19ad.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="JavaScript/index.js"></script>
+    <script src="JavaScript/swipe.js"></script>
+
     <?php require 'footer.php' ?>
 </body>
 
