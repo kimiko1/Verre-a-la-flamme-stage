@@ -31,5 +31,30 @@ trait BDDHoraireTrait
 
         return $horaires;
     }
+    public function updateHoraires($jour, $horaire)
+    {
+
+        // Construction de la requête SQL
+        $requete = "UPDATE horaires set horaire=? where Jours = ?";
+
+        // Préparation de la requête SQL
+        $resultats = $this->bdd->prepare($requete);
+        
+        // Envoi de la requête SQL
+        $resultats->execute([$horaire, $jour]);
+        
+        return $_POST['message'] = "Félication";
+    }
+    public function getMois()
+    {
+        // Construction de la requête SQL
+        $requete = $this->bdd->prepare("SELECT Mois FROM horaires where Jours='Lundi'");
+
+        // Envoi de la requête SQL
+        $requete->execute();
+
+        $result = $requete->fetchAll();
+        return $result;
+    }
 }
 ?>

@@ -42,6 +42,11 @@ class BDD
     private static string $cheminDeLaBDD = '../data/database.db';
 
     /**
+     * Variable de classe indiquant le chemin d'accès vers le fichier de la base de données côté admin.
+     */
+    private static string $cheminDeLaBDDAdmin = '../../data/database.db';
+
+    /**
      * Base de données SQLite3.
      */
     private $bdd;
@@ -63,7 +68,12 @@ class BDD
 
     public function __construct()
     {
-        $this->bdd = new PDO('sqlite:' . BDD::$cheminDeLaBDD);
+        if($_SERVER['REQUEST_URI'] == '/'){
+            $this->bdd = new PDO('sqlite:' . BDD::$cheminDeLaBDD);
+        }
+        else{
+            $this->bdd = new PDO('sqlite:' . BDD::$cheminDeLaBDDAdmin);
+        }
     }
 }
 

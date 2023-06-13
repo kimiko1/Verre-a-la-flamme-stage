@@ -6,7 +6,7 @@
             <p>Lauresposito@gmail.com</p>
         </a>
     </div>
-    <img src="img/reverseLogo.png" alt="" class="logo">
+    <img src="../img/reverseLogo.png" alt="" class="logo">
     <div class="instagram">
         <p>instagram</p>
         <a href="https://www.instagram.com/verre_a_la_flamme/">
@@ -14,7 +14,7 @@
             <p>Verre_a_la_flamme</p>
         </a>
     </div>
-    <img src="img/reverseLogo.png" alt="" class="logo">
+    <img src="../img/reverseLogo.png" alt="" class="logo">
     <div class="facebook">
         <p>Facebook</p>
         <a href="https://www.facebook.com/profile.php?id=100057604652241">

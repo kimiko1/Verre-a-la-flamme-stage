@@ -1,36 +1,63 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 html,
 body {
     height: 100%;
 }
 
 body {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
 }
 
 .Accueil {
     background: url("../img/index-background.png") center no-repeat;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
     flex-grow: 1;
 }
 
 .Accueil p {
     color: black;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
     align-self: center;
 }
 
 .title {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: flex-end;
 }
 
 .title-h1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     color: #FD915A;
+    margin-right: 12%;
 }
 
 .subtitle {
     text-align: center;
     margin-top: 7px;
+    padding-right: 8%;
+}
+
+h2 {
+    font-size: xx-large;
 }
 
 .batons {
@@ -45,20 +72,30 @@ body {
 }
 
 .presentation {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
+    margin-top: 30px;
 }
 
 .img {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 25px;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
     justify-content: space-evenly;
 }
 
 .desc-horaire {
     border: black 2px solid;
     border-radius: 25px;
+    -webkit-box-shadow: 0px 0px 20px 10px;
     box-shadow: 0px 0px 20px 10px;
     background: #d6d4d4;
     width: 22%;
@@ -67,7 +104,7 @@ body {
 .desc {
     text-align: center;
     font-family: 'Pacifico', cursive;
-    font-size: large;
+    font-size: x-large;
 }
 
 img.bijou {
@@ -86,38 +123,149 @@ img.flyer {
 
 .right-text {
     width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     margin-left: 30.19%;
 }
 
 span {
-    font-size: 60px;
+    font-size: 1.5em;
 }
 
 .presentation {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     width: 100%;
-    height: 100vh;
 }
 
-.swipe{
+.presentation p {
+    color: black;
+}
+
+.swipe {
     width: 100%;
-    height: 100vh;
-    display: flex;
 }
 
-.swiper{
-    width: 80%;
-    height: fit-content;
+.swiper {
+    width: 100%;
 }
 
-.swiper-slide{
-    align-self: center;
+.swiper-slide img {
+    width: 40%;
+    transform: translateX(75%);
 }
 
-.swiper-slide img{
-    width: fit-content;
-    transform: translateX(30%);
+img.haut {
+    width: 20%;
+    transform: translateX(190%);
+}
+
+.description {
+    width: 65%;
+}
+
+@media screen and (max-width: 1400px) {
+    h1.title {
+        font-size: xx-large;
+    }
+
+    .presentation p {
+        font-size: small;
+    }
+
+    th,
+    td {
+        font-size: small;
+    }
+
+    p.variable {
+        font-size: small;
+    }
+
+    h2 {
+        font-size: x-large;
+    }
+
+    span {
+        font-size: xx-large;
+    }
+
+    .subtitle {
+        padding-right: 3%;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    h1.title {
+        font-size: medium;
+    }
+
+    span {
+        font-size: 80%;
+    }
+
+    .presentation p {
+        font-size: small;
+    }
+
+    th,
+    td {
+        font-size: small;
+    }
+
+    p.variable {
+        font-size: small;
+    }
+
+    .img {
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+
+    img.flyer {
+        width: 90%;
+    }
+
+    img.bijou {
+        display: none;
+    }
+
+    .desc-horaire {
+        width: 45%;
+    }
+
+    .horaire {
+        display: block;
+    }
+
+}
+
+@media screen and (max-width: 850px) {
+    span {
+        font-size: 50%;
+    }
+
+    h2 {
+        font-size: large;
+    }
+
+    .swiper-slide img {
+        width: 50%;
+        transform: translateX(49%);
+    }
+}
+
+
+/* Navigation */
+nav{
+    background: #000;
 }

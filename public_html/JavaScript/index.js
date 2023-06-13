@@ -16,3 +16,16 @@ new Typewriter(flamme,{
 })
 .typeString(value_flamme)
 .start();
+
+const swiper = new Swiper('.swiper', {
+    loop: true,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: true,
+    },
+
+navigation: {
+    nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+},
+});

@@ -29,6 +29,9 @@ $horaire = $bdd->getHoraires();
 </head>
 
 <body>
+    <nav>
+        <a href="#Presentation">Présentation</a>
+    </nav>
     <div class="Accueil" id="Accueil">
         <div class="title">
 
@@ -61,39 +64,11 @@ $horaire = $bdd->getHoraires();
                             <tbody>
                                 <?php foreach ($horaire as $hor): ?>
                                     <tr>
-                                        <td>Lundi : </td>
                                         <td>
-                                            <?= $hor['Lundi']; ?>
+                                            <?= $hor['Jours'] ?>
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mardi : </td>
                                         <td>
-                                            <?= $hor['Mardi']; ?>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mercredi : </td>
-                                        <td>
-                                            <?= $hor['Mercredi']; ?>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jeudi : </td>
-                                        <td>
-                                            <?= $hor['Jeudi']; ?>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Vendredi : </td>
-                                        <td>
-                                            <?= $hor['Vendredi']; ?>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Samedi : </td>
-                                        <td>
-                                            <?= $hor['Samedi']; ?>
+                                            <?= $hor['horaire'] ?>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
@@ -107,45 +82,47 @@ $horaire = $bdd->getHoraires();
             </div>
         </div>
     </div>
-    <div class="presentation">
+    <div class="presentation" id="Presentation">
         <h1 class="title">Présentation</h1>
         <div class="description">
-            test
+            <p class="desc">Créative et manuelle depuis ma plus tendre enfance, j'ai découvert le métier du verre qui
+                m'a tout de
+                suite passionné. Après avoir effectué une formation, je me suis lancée dans cette belle aventure ! Toute
+                mes perles sont fabriquées à partir de baguettes de verre de Murano que
+                je fond à la flamme pour obtenir la forme souhaitée et créer des bijoux uniques dans mon atelier/boutique a Gap.</p>
         </div>
-        <div class="swipe">
-            <div class="swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_011.JPG" alt=""></div>
-                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_014.JPG" alt=""></div>
-                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_016.JPG" alt=""></div>
-                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_019.JPG" alt=""></div>
-                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_021.JPG" alt=""></div>
-                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_027.JPG" alt=""></div>
-                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_031.JPG" alt=""></div>
-                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_036.JPG" alt=""></div>
-                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_037.JPG" alt=""></div>
-                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_038.JPG" alt=""></div>
-                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_040.JPG" alt=""></div>
-                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_047.JPG" alt=""></div>
-                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_049.JPG" alt=""></div>
-                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_052.JPG" alt=""></div>
-                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_056.JPG" alt=""></div>
+            <div class="swipe">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img class="haut" src="img/Presentation/Fileuse de verre_011.JPG" alt=""></div>
+                        <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_014.JPG" alt=""></div>
+                        <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_016.JPG" alt=""></div>
+                        <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_019.JPG" alt=""></div>
+                        <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_021.JPG" alt=""></div>
+                        <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_027.JPG" alt=""></div>
+                        <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_031.JPG" alt=""></div>
+                        <div class="swiper-slide"><img class="haut" src="img/Presentation/Fileuse de verre_036.JPG" alt=""></div>
+                        <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_037.JPG" alt=""></div>
+                        <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_038.JPG" alt=""></div>
+                        <div class="swiper-slide"><img class="haut" src="img/Presentation/Fileuse de verre_040.JPG" alt=""></div>
+                        <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_047.JPG" alt=""></div>
+                        <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_049.JPG" alt=""></div>
+                        <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_052.JPG" alt=""></div>
+                        <div class="swiper-slide"><img class="haut" src="img/Presentation/Fileuse de verre_056.JPG" alt=""></div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
-                <div class="swiper-pagination"></div>
-    
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
             </div>
-        </div>
-        
-    </div>  
+    </div>
     <a href="#Accueil">Revenir à l'Accueil</a>
+    <div>
+
+    </div>
     <script src="https://kit.fontawesome.com/84f57e19ad.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="JavaScript/index.js"></script>
-    <script src="JavaScript/swipe.js"></script>
-
     <?php require 'footer.php' ?>
 </body>
 
