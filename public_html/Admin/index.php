@@ -7,8 +7,13 @@ require('../../model/BDD.php');
 // Inclusion des espaces de nommage utilisés dans notre code
 use Model\BDD;
 
+// Initialisation d'une variable bdd permettant de nous connecter à la base de données
+$bdd = BDD::instance();
+
+// Initialisation des sessions
+$bdd->init_php_session();
+
 // On récupère les horaires de la base de données.
-$bdd     = BDD::instance();
 $horaire = $bdd->getHoraires();
 
 // On récupère le Mois
@@ -62,7 +67,10 @@ $Mois = $bdd->getMois();
                             <thead class="thead-dark">
                                 <tr>
                                     <th colspan="2" style="text-align: center;">Les horaires jusqu'à fin
-                                        <input type="text" value="<?= $Mois[0]['Mois']; ?>" size="9"> :
+                                        <form action="updateMois.php" method="post">
+                                            <input type="text" name="Mois" value="<?= $Mois[0]['Mois']; ?>" size="9"> :
+                                            <input type="submit" value="Modifier">
+                                        </form>
                                     </th>
 
                                 </tr>
@@ -75,12 +83,8 @@ $Mois = $bdd->getMois();
                                         </td>
                                         <td>
                                             <form action="updateHoraire.php" method="post">
-                                                <input type="text" value="<?= $hor['horaire']; ?>" size="25"
-                                                    name="horaire">
-                                                    <?php if(isset($_POST['message'])){
-                                                        echo $_POST['message'];
-                                                    }?>
-                                                    <input type="hidden" name="jour" value="<?= $hor['Jours']?>">
+                                                <input type="text" value="<?= $hor['horaire']; ?>" size="25" name="horaire">
+                                                <input type="hidden" name="jour" value="<?= $hor['Jours'] ?>">
                                                 <input type="submit" value="Modifier">
                                             </form>
                                         </td>

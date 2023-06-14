@@ -12,7 +12,6 @@ $bdd = BDD::instance();
 // Initialisation des sessions
 $bdd->init_php_session();
 
-
 if (isset($_POST['valid_connection'])) {
     
     if (
@@ -21,12 +20,9 @@ if (isset($_POST['valid_connection'])) {
         ) {
             $email = $_POST['mail'];
             $password = $_POST['mot_de_passe'];
-            $connexion = $bdd->utilisateur($email, $password);
-            
-            
-            var_dump($connexion);
+            $connexion = $bdd->ajouterUtilisateur($email, $password);
         }
-}
+    }
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -40,7 +36,7 @@ if (isset($_POST['valid_connection'])) {
 
 <body>
     <main class="form-signin w-100 m-sm-auto">
-        <form method="post" action="controle_identification.php">
+        <form method="post">
             <img class="mb-4" src="./img/sio-gap.png" alt="">
             <h1 class="h3 mb-3 fw-normal">Veuillez vous identifier</h1>
 

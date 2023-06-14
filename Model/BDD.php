@@ -68,7 +68,7 @@ class BDD
 
     public function __construct()
     {
-        if($_SERVER['REQUEST_URI'] == '/'){
+        if($_SERVER['REQUEST_URI'] == '/index.php' || $_SERVER['REQUEST_URI'] == '/connexion.php'|| $_SERVER['REQUEST_URI'] == '/inscription.php' || $_SERVER['REQUEST_URI'] == '/controle_identification.php'){
             $this->bdd = new PDO('sqlite:' . BDD::$cheminDeLaBDD);
         }
         else{

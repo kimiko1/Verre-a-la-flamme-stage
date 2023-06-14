@@ -7,9 +7,17 @@ require('../model/BDD.php');
 // Inclusion des espaces de nommage utilisés dans notre code
 use Model\BDD;
 
+// Initialisation d'une variable bdd permettant de nous connecter à la base de données
+$bdd = BDD::instance();
+
+// Initialisation des sessions
+$bdd->init_php_session();
+
 // On récupère les horaires de la base de données.
-$bdd     = BDD::instance();
 $horaire = $bdd->getHoraires();
+
+// On récupère le Mois
+$Mois = $bdd->getMois();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -57,7 +65,8 @@ $horaire = $bdd->getHoraires();
                         <table class="table">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th colspan="2" style="text-align: center;">Les horaires jusqu'à fin Juin 2023 :
+                                    <th colspan="2" style="text-align: center;">Les horaires jusqu'à fin
+                                        <?= $Mois[0]['Mois']; ?> :
                                     </th>
                                 </tr>
                             </thead>
@@ -89,31 +98,36 @@ $horaire = $bdd->getHoraires();
                 m'a tout de
                 suite passionné. Après avoir effectué une formation, je me suis lancée dans cette belle aventure ! Toute
                 mes perles sont fabriquées à partir de baguettes de verre de Murano que
-                je fond à la flamme pour obtenir la forme souhaitée et créer des bijoux uniques dans mon atelier/boutique a Gap.</p>
+                je fond à la flamme pour obtenir la forme souhaitée et créer des bijoux uniques dans mon
+                atelier/boutique a Gap.</p>
         </div>
-            <div class="swipe">
-                <div class="swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img class="haut" src="img/Presentation/Fileuse de verre_011.JPG" alt=""></div>
-                        <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_014.JPG" alt=""></div>
-                        <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_016.JPG" alt=""></div>
-                        <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_019.JPG" alt=""></div>
-                        <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_021.JPG" alt=""></div>
-                        <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_027.JPG" alt=""></div>
-                        <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_031.JPG" alt=""></div>
-                        <div class="swiper-slide"><img class="haut" src="img/Presentation/Fileuse de verre_036.JPG" alt=""></div>
-                        <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_037.JPG" alt=""></div>
-                        <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_038.JPG" alt=""></div>
-                        <div class="swiper-slide"><img class="haut" src="img/Presentation/Fileuse de verre_040.JPG" alt=""></div>
-                        <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_047.JPG" alt=""></div>
-                        <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_049.JPG" alt=""></div>
-                        <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_052.JPG" alt=""></div>
-                        <div class="swiper-slide"><img class="haut" src="img/Presentation/Fileuse de verre_056.JPG" alt=""></div>
+        <div class="swipe">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img class="haut" src="img/Presentation/Fileuse de verre_011.JPG" alt="">
                     </div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_014.JPG" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_016.JPG" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_019.JPG" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_021.JPG" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_027.JPG" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_031.JPG" alt=""></div>
+                    <div class="swiper-slide"><img class="haut" src="img/Presentation/Fileuse de verre_036.JPG" alt="">
+                    </div>
+                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_037.JPG" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_038.JPG" alt=""></div>
+                    <div class="swiper-slide"><img class="haut" src="img/Presentation/Fileuse de verre_040.JPG" alt="">
+                    </div>
+                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_047.JPG" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_049.JPG" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Presentation/Fileuse de verre_052.JPG" alt=""></div>
+                    <div class="swiper-slide"><img class="haut" src="img/Presentation/Fileuse de verre_056.JPG" alt="">
+                    </div>
                 </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
+        </div>
     </div>
     <a href="#Accueil">Revenir à l'Accueil</a>
     <div>

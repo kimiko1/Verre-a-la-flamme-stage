@@ -12,11 +12,9 @@ $bdd = BDD::instance();
 
 var_dump($_POST);
 
-$jour = $_POST["jour"];
+$Mois = $_POST["Mois"];
 
-$horaire = $_POST["horaire"];
-
-$update = $bdd->updateHoraires($jour, $horaire);
+$update = $bdd->updateMois($Mois);
 
 header('Location: index.php');
 ?>
