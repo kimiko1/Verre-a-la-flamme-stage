@@ -35,6 +35,7 @@ trait BDDConnexionTrait
             // On retourne les informations de l'utilisateur
             return $res;
         }
+        return false;
 
     }
     /**

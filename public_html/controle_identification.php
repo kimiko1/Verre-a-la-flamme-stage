@@ -16,17 +16,41 @@ require '../model/BDD.php';
 use Model\BDD;
 
 // Si la requête POST contient mail et mot_de_passe, on vérifie dans la base.
-if (isset($_POST["mail"]) && isset($_POST["mot_de_passe"])) {
+if (isset($_POST['valid_connection'])) {
     // Requête sur les utilisateurs
     $bdd = BDD::instance();
     $user = $bdd->utilisateur($_POST["mail"], $_POST["mot_de_passe"]);
-    if ($user['user_admin'] == 1) {
-        header('Location: ./Admin/index.php');
-
-    } else {
-        header("Location: ./index.php");
+    if ($user != false) {
+        if ($user['user_admin'] == 1) {
+            $bdd->clean_php_session();
+            session_start();
+            $_SESSION['email'] = $user['user_mail'];
+            $_SESSION['password'] = $user['user_password'];
+            $_SESSION['admin'] = $user['user_admin'];
+            header('Location: ./Admin/index.php');
+    
+        } else {
+            $bdd->clean_php_session();
+            session_start();
+            $_SESSION['email'] = $user['user_mail'];
+            $_SESSION['password'] = $user['user_password'];
+            $_SESSION['admin'] = $user['user_admin'];
+            header('Location: ./index.php');
+        }
+    }
+    else {
+        header('Location: ./connexion.php');
     }
 
-    die();
-
+}
+else {
+    $bdd = BDD::instance();
+    $user = $bdd->utilisateur($_POST["mail"], $_POST["mot_de_passe"]);
+    if ($user===false) {
+        $bdd->ajouterUtilisateur($_POST["mail"], $_POST["mot_de_passe"]);
+        header('Location: ./connexion.php');
+    }
+    else{
+        header('Location: ./connexion.php');
+    }
 }

@@ -13,6 +13,14 @@ $bdd = BDD::instance();
 // Initialisation des sessions
 $bdd->init_php_session();
 
+
+if (isset($_SESSION['email']) and $_SESSION['admin']){
+    $_POST['etat_connexion'] = 'connected';
+}
+else {
+    header('Location: ../connexion.php');
+}
+
 // On récupère les horaires de la base de données.
 $horaire = $bdd->getHoraires();
 
