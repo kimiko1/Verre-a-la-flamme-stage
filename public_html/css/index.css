@@ -8,6 +8,9 @@
 html,
 body {
     height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 body {
@@ -22,6 +25,7 @@ body {
 
 .Accueil {
     background: url("../img/index-background.png") center no-repeat;
+    background-size: cover;
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
@@ -160,17 +164,37 @@ span {
 }
 
 .swiper-slide img {
-    width: 40%;
-    transform: translateX(75%);
+    width: 66%;
+    transform: translateX(26.5%)
 }
 
 img.haut {
-    width: 20%;
-    transform: translateX(190%);
+    width: 35%;
+    transform: translateX(98%);
 }
 
 .description {
     width: 65%;
+}
+
+.input {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.position {
+    width: 3em;
+}
+
+.inputImg {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+textarea {
+    box-sizing: border-box;
+    max-width: 100%;
 }
 
 @media screen and (max-width: 1400px) {
@@ -204,7 +228,7 @@ img.haut {
     }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1300px) {
     h1.title {
         font-size: medium;
     }
@@ -257,15 +281,10 @@ img.haut {
     h2 {
         font-size: large;
     }
-
-    .swiper-slide img {
-        width: 50%;
-        transform: translateX(49%);
-    }
 }
 
 
 /* Navigation */
-nav{
+nav {
     background: #000;
 }

@@ -1,16 +1,19 @@
 footer{
     background-color: black;
+    width: 100%;
 }
 hr{
     color: beige;
 }
 div{
-    padding-top: 10px;
     display: inline-block;
 }
 a, i,p{
     color: white;
     text-decoration: none;
+}
+i{
+    padding-bottom: 15px;
 }
 img.logo{
     height: 60%;

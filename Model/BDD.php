@@ -14,6 +14,7 @@ use PDO;
 // Inclusion du traits permettant de scinder la classe BDD pour faciliter la maintenance 
 require dirname(__FILE__)."/BDDConnexionTrait.php";
 require dirname(__FILE__)."/BDDHorairesTrait.php";
+require dirname(__FILE__)."/BDDPresentationTrait.php";
 
 /**
  * Cette classe sert d'interface d'encapsulation pour les accès à la base
@@ -30,6 +31,11 @@ class BDD
      * Trait centralisant le code lié aux horaires
      */
     use BDDHoraireTrait;
+
+    /**
+     * Trait centralisant le code lié à la présentation
+     */
+    use BDDPresentationTrait;
 
     /**
      * Singleton de la base de données.

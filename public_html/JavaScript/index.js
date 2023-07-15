@@ -1,5 +1,4 @@
 const Verre_a_la= document.querySelector('h1.verre_a_la');
-console.log(Verre_a_la);
 const value_Verre_a_la = Verre_a_la.innerHTML;
 
 const flamme = document.querySelector('h1.flamme');

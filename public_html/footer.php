@@ -1,9 +1,18 @@
+<?php
+function hex_encode($str)
+{
+    $encoded = bin2hex($str);
+    $encoded = chunk_split($encoded, 2, '%');
+    $encoded = '%' . substr($encoded, 0, strlen($encoded) - 1);
+    return $encoded;
+}
+?>
 <footer class="text-center">
     <div class="gmail">
         <p>Mail</p>
-        <a href="#">
+        <a href="mailto:<?php echo hex_encode("Lauresposito@gmail.com"); ?>">
             <i class="fa-regular fa-envelope fa-xl"></i>
-            <p>Lauresposito@gmail.com</p>
+            <p>Mon mail</p>
         </a>
     </div>
     <img src="../img/reverseLogo.png" alt="" class="logo">
